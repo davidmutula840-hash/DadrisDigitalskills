@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Dadris Designers Courses</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .mpesa-box {
+      background: #e0ffe8;
+      border-left: 5px solid #1b9e32;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .number {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1b9e32;
+    }
+
+    button {
+      background: #1b9e32;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #d1ffd8;
+      border-left: 5px solid #1b9e32;
+      color: #1b9e32;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVIGATION BAR ================= -->
+<style>
+  .navbar {
+    width: 100%;
+    background: #1b9e32;
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .navbar .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #1b9e32;
+    padding-top: 60px;
+    transition: 0.3s;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+</style>
+
+<div class="navbar">
+  <div class="logo">Dadris Designers</div>
+  <div class="menu-icon" onclick="openMenu()">☰</div>
+</div>
+
+<div class="nav-links" id="navMenu">
+  <div class="close-btn" onclick="closeMenu()">×</div>
+  <a href="index.html">Home</a>
+  <a href="course.html">Courses</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function openMenu() {
+    document.getElementById("navMenu").style.right = "0";
+  }
+  function closeMenu() {
+    document.getElementById("navMenu").style.right = "-250px";
+  }
+</script>
+<!-- =============== END NAVIGATION =================== -->
+
+
+  <div class="container">
+    <h2>Complete Your Payment</h2>
+
+    <p>Send the payment to the Mpesa number below:</p>
+
+    <div class="mpesa-box">
+      <p class="number" id="mpesaNumber">0745365756 – DAVID MUTULA</p>
+      <button onclick="copyNumber()">Copy Number</button>
+    </div>
+
+    <h3>Enter Mpesa Confirmation Code</h3>
+    <input type="text" id="code" placeholder="e.g. QJD4P2ABCD" />
+
+    <button onclick="submitCode()">Submit Payment</button>
+
+    <div class="success" id="successMessage">
+      ✔ Payment Submitted Successfully!  
+      We will verify and activate your course shortly.
+    </div>
+  </div>
+
+  <script>
+    function copyNumber() {
+      let num = document.getElementById("mpesaNumber").innerText;
+      navigator.clipboard.writeText(num);
+      alert("Number copied to clipboard!");
+    }
+
+    function submitCode() {
+      let code = document.getElementById("code").value.trim();
+
+      if (code.length < 5) {
+        alert("Please enter a valid Mpesa confirmation code.");
+        return;
+      }
+
+      document.getElementById("successMessage").style.display = "block";
+      document.getElementById("code").value = "";
+    }
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Details | Dadris Designers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="course-detail">
+    <div id="courseContent"></div>
+    <a href="checkout.html" class="btn">Enroll Now</a>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const courseName = params.get("course");
+
+    const courses = {
+      "graphic-design": {
+        title: "Graphic Design",
+        image: "https://via.placeholder.com/400x250",
+        desc: "Learn to create eye-catching posters, logos, and ads using Adobe Photoshop and Illustrator.",
+        requirements: "A laptop (4GB+ RAM), Photoshop or Canva, and internet connection.",
+        mode: "Physical & Virtual",
+        duration: "4 weeks (3 sessions per week)",
+        fee: "Ksh 2000",
+      },
+      "web-design": {
+        title: "Web Design",
+        image: "https://via.placeholder.com/400x250",
+        desc: "Learn HTML, CSS, and JavaScript to create modern, responsive websites.",
+        requirements: "A laptop, internet, and willingness to learn coding.",
+        mode: "Virtual only",
+        duration: "5 weeks (3 sessions per week)",
+        fee: "Ksh 3000",
+      },
+      "photo-editing": {
+        title: "Photo Editing",
+        image: "https://via.placeholder.com/400x250",
+        desc: "Master Lightroom and Photoshop for professional photo retouching.",
+        requirements: "Laptop or desktop with Photoshop installed.",
+        mode: "Physical & Virtual",
+        duration: "3 weeks",
+        fee: "Ksh 1500",
+      },
+      "canva-design": {
+        title: "Canva Design",
+        image: "https://via.placeholder.com/400x250",
+        desc: "Learn how to create amazing designs using Canva for social media, business cards, and flyers.",
+        requirements: "Smartphone or laptop, Canva account.",
+        mode: "Virtual only",
+        duration: "2 weeks",
+        fee: "Ksh 1000",
+      },
+    };
+
+    const course = courses[courseName];
+    if (!course) {
+      document.getElementById("courseContent").innerHTML = "<p>Course not found.</p>";
+    } else {
+      document.getElementById("courseContent").innerHTML = `
+        <h2>${course.title}</h2>
+        <img src="${course.image}" alt="${course.title}" style="width:100%;max-width:400px;border-radius:10px;">
+        <p><strong>Description:</strong> ${course.desc}</p>
+        <p><strong>Requirements:</strong> ${course.requirements}</p>
+        <p><strong>Mode of Learning:</strong> ${course.mode}</p>
+        <p><strong>Duration:</strong> ${course.duration}</p>
+        <p><strong>Fee:</strong> ${course.fee}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Design Course | Dadris Designers</title>
+
+  <style>
+    /* ====== BASIC RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    /* ===== HAMBURGER MENU ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    /* MOBILE MENU */
+    .mobile-nav {
+      display: none;
+      background: #007bff;
+      width: 100%;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+
+    .mobile-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    /* ====== COURSE SECTION ====== */
+    .course-detail {
+      width: 90%;
+      margin: 40px auto;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .course-detail img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .course-detail h1 {
+      color: #007bff;
+      margin: 20px 0 10px;
+    }
+
+    .course-detail p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .course-detail h3 {
+      margin: 20px 0 10px;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    #cartMessage {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 500;
+      color: green;
+    }
+
+    /* ===== MOBILE SCREEN ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: block;
+      }
+
+      .course-detail {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="nav-bar">
+      <h2 class="logo">Dadris Designers</h2>
+
+      <!-- NAV DESKTOP -->
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#courses">Courses</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- HAMBURGER MENU -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#courses">Courses</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== COURSE DETAILS ===== -->
+  <section class="course-detail">
+    <img src="../images/graphicdesign.jpg" alt="Graphic Design">
+
+    <h1>Graphic Design Course</h1>
+    <p>Unlock your creativity with our Graphic Design Course! Learn to use Adobe Photoshop, Illustrator...</p>
+
+    <h3>🧾 Course Requirements:</h3>
+    <ul>
+      <li>A laptop or computer (Windows or macOS)</li>
+      <li>Adobe Photoshop & Illustrator installed</li>
+      <li>Basic computer knowledge</li>
+    </ul>
+
+    <h3>📅 Schedule:</h3>
+    <p><b>Price:</b> KES 2500</p>
+
+    <button class="btn" id="addToCartBtn">Add to Cart</button>
+    <a href="checkout.html" class="btn">Proceed to Checkout</a>
+
+    <p id="cartMessage">✅ Added to Cart Successfully!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Dadris Designers | Designs. Define Dadris</p>
+  </footer>
+
+  <script>
+    // Add to Cart
+    document.getElementById('addToCartBtn').addEventListener('click', function () {
+      const message = document.getElementById('cartMessage');
+      message.style.display = 'block';
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({
+        id: 1,
+        name: "Graphic Design Course",
+        price: 2500
+      });
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+    });
+
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

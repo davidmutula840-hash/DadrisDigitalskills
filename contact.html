@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Dadris Designers</title>
+</head>
+<body>
+
+<!-- ================= NAVBAR (same as other pages) ================= -->
+<style>
+  .navbar {
+    width: 100%;
+    background: #1b9e32;
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .navbar .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #1b9e32;
+    padding-top: 60px;
+    transition: 0.3s;
+  }
+  .nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+</style>
+
+<div class="navbar">
+  <div class="logo">Dadris Designers</div>
+  <div class="menu-icon" onclick="openMenu()">☰</div>
+</div>
+
+<div class="nav-links" id="navMenu">
+  <div class="close-btn" onclick="closeMenu()">×</div>
+  <a href="index.html">Home</a>
+  <a href="course.html">Courses</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function openMenu() { document.getElementById("navMenu").style.right = "0"; }
+  function closeMenu() { document.getElementById("navMenu").style.right = "-250px"; }
+</script>
+<!-- ================= END NAVBAR ================= -->
+
+
+
+<!-- ================= HERO HEADER ================= -->
+<div style="
+    width:100%; 
+    padding:60px 20px; 
+    background:white; 
+    text-align:center;">
+  <h1 style="font-size:40px; color:#1b9e32;">Contact Us</h1>
+  <p style="font-size:18px; color:#444; max-width:600px; margin:auto;">
+    Have questions? Want to join our courses? Reach out to Dadris Designers today.
+  </p>
+</div>
+<!-- =============== END HERO HEADER =============== -->
+
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<div style="
+    max-width:1000px; 
+    margin:50px auto; 
+    padding:20px; 
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:50px; 
+    justify-content:center;">
+
+  <!-- Contact Form -->
+  <div style="
+      flex:1; min-width:300px; 
+      padding:25px; 
+      background:white; 
+      border-radius:15px; 
+      box-shadow:0 6px 18px rgba(0,0,0,0.1);">
+
+    <h2 style="color:#1b9e32;">Send Us a Message</h2>
+
+    <form action="https://formspree.io/f/xpwyorwe" method="POST" style="margin-top:20px;">
+      <input type="text" placeholder="Your Name" required
+        style="width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+      <input type="email" placeholder="Your Email" required
+        style="width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+      <input type="text" placeholder="Phone Number"
+        style="width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+      <textarea placeholder="Your Message" required
+        style="width:100%; padding:12px; height:120px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;"></textarea>
+
+      <button type="submit" 
+        style="width:100%; background:#1b9e32; color:white; padding:12px; border:none; border-radius:5px; font-size:16px;">
+        Send Message
+      </button>
+    </form>
+  </div>
+
+  <!-- Contact Info -->
+  <div style="
+      flex:1; min-width:300px; 
+      padding:25px;">
+    <h2 style="color:#1b9e32;">Get in Touch</h2>
+
+    <p style="font-size:16px; color:#444; margin-top:10px; line-height:1.6;">
+      <strong>Phone:</strong> 0745 365 756<br>
+      <strong>Email:</strong> dadrisdesigners@gmail.com<br>
+      <strong>WhatsApp:</strong> +254 745 365 756<br>
+      <strong>Location:</strong> Nairobi, Kenya
+    </p>
+
+    <a href="https://wa.me/254745365756" target="_blank"
+      style="display:inline-block; margin-top:20px; background:#1b9e32; color:white; padding:12px 25px; text-decoration:none; border-radius:5px;">
+      Chat on WhatsApp
+    </a>
+  </div>
+
+</div>
+<!-- =============== END CONTACT SECTION =============== -->
+
+
+
+<!-- ================= GOOGLE MAP SECTION ================= -->
+<div style="width:100%; margin-top:40px; text-align:center;">
+  <h2 style="color:#1b9e32;">Find Us on Google Maps</h2>
+  <iframe 
+    src="https://maps.google.com/maps?q=Nairobi&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+    width="100%" 
+    height="350" 
+    frameborder="0" 
+    style="border:0; margin-top:20px; border-radius:10px;">
+  </iframe>
+</div>
+<!-- =============== END MAP SECTION =============== -->
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer style="
+    background:#1b9e32;
+    padding:40px 20px;
+    color:white;
+    text-align:center; 
+    margin-top:60px;">
+  
+  <h3 style="margin-bottom:10px;">Dadris Designers</h3>
+  <p style="max-width:600px; margin:auto; line-height:1.6; font-size:15px;">
+    Empowering students with world-class Graphic Design, Web Development, 
+    and Creative Skills Training.
+  </p>
+
+  <p style="margin-top:20px; font-size:14px;">
+    © 2025 Dadris Designers — All Rights Reserved.
+  </p>
+
+</footer>
+<!-- =============== END FOOTER ================= -->
+
+</body>
+</html>

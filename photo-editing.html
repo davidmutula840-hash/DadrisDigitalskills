@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Editing Course | Dadris Designers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: #28a745;
+      color: white;
+      padding: 1rem 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* MOBILE MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #28a745;
+        padding: 15px;
+        border-radius: 8px;
+        width: 150px;
+        flex-direction: column;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* PAGE CONTENT */
+    .course-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .course-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 30px;
+    }
+
+    .course-content h2 {
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+
+    .course-details {
+      margin: 20px 0;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #1f7a35;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #28a745;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background: #eee;
+      color: #444;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER WITH HAMBURGER -->
+  <header>
+    <div class="logo">Dadris Designers</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#courses">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- COURSE CONTENT -->
+  <div class="course-container">
+    <img src="images/photoedit.jpg" alt="Photo Editing" class="course-image">
+    <div class="course-content">
+      <h2>Course Overview</h2>
+      <p>Bring your photos to life! Learn to retouch, color-correct, and enhance images professionally using Adobe Photoshop and Lightroom.</p>
+
+      <div class="course-details">
+        <p><span class="highlight">🕓 Duration:</span> 4 Weeks</p>
+        <p><span class="highlight">📅 Start Date:</span> 18th November 2025</p>
+        <p><span class="highlight">📍 Mode:</span> Virtual & Physical</p>
+        <p><span class="highlight">💼 Requirements:</span> Laptop/PC with Photoshop or similar software</p>
+        <p><span class="highlight">💰 Price:</span> KES 1,800</p>
+      </div>
+
+      <!-- BUTTON: GO DIRECTLY TO CHECKOUT -->
+      <a href="checkout.html" class="btn">Add to Cart</a>
+
+      <a href="index.html" class="back-link">← Back to Courses</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Dadris Designers | Designs. Define Dadris</p>
+  </footer>
+
+  <!-- SCRIPT FOR MOBILE MENU -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

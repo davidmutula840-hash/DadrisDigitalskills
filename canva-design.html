@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canva Design Course | Dadris Designers</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #ff6f00;
+      color: #fff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #ffe0b2;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: none;
+      background: #ff6f00;
+      width: 100%;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .mobile-nav ul li a {
+      color: white;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .mobile-nav.active {
+      display: block;
+    }
+
+    /* ===== COURSE SECTION ===== */
+    .course-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .course-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 30px;
+    }
+
+    .course-content h2 {
+      color: #ff6f00;
+      margin-bottom: 10px;
+    }
+
+    .course-details {
+      margin: 20px 0;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #ff6f00;
+    }
+
+    .btn {
+      background: #ff6f00;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      background: #d45c00;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #ff6f00;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background: #eee;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .course-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="nav-bar">
+      <h2 class="logo">Dadris Designers</h2>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#courses">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#courses">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== COURSE CONTENT ===== -->
+  <div class="course-container">
+    <img src="images/canva.jpg" alt="Canva Design" class="course-image">
+
+    <div class="course-content">
+      <h2>Course Overview</h2>
+      <p>Learn to design eye-catching posters, flyers, presentations, and social media posts using <strong>Canva</strong>. This course is perfect for beginners who want to create professional-quality visuals easily.</p>
+
+      <div class="course-details">
+        <p><span class="highlight">🕓 Duration:</span> 3 Weeks</p>
+        <p><span class="highlight">📅 Start Date:</span> 20th November 2025</p>
+        <p><span class="highlight">📍 Mode:</span> Virtual & Physical</p>
+        <p><span class="highlight">💼 Requirements:</span> A smartphone or computer with internet access.</p>
+        <p><span class="highlight">💰 Price:</span> KES 1,500</p>
+      </div>
+
+      <button class="btn" id="addToCartBtn">Add to Cart</button>
+      <a href="index.html#courses" class="back-link">← Back to Courses</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Dadris Designers | Designs. Define Dadris</p>
+  </footer>
+
+  <script>
+    // Add to Cart
+    document.getElementById("addToCartBtn").addEventListener("click", function () {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({
+        id: 2,
+        name: "Canva Design Course",
+        price: 1500
+      });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Canva Design Course added to cart ✅");
+    });
+
+    // Hamburger Menu Logic
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
